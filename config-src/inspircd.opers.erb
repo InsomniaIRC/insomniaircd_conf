@@ -1,0 +1,44 @@
+#
+# IRCOP Definitions.
+#
+
+#
+# Oper Classes
+#
+<class name="FullControl" commands="*" privs="*" usermodes="*" channelmodes="*">
+<class name="Shutdown" commands="DIE RESTART REHASH LOADMODULE UNLOADMODULE RELOAD">
+<class name="ServerLink" commands="CONNECT SQUIT RCONNECT MKPASSWD MKSHA256">
+<class name="BanControl" commands="KILL GLINE KLINE ZLINE QLINE ELINE">
+<class name="IRCOpClass" commands="OPER CHGNAME" usermodes="s" channelmodes="O">
+<class name="OperChat" commands="WALLOPS GLOBOPS SETIDLE SPYLIST SPYNAMES">
+<class name="HostCloak" commands="SETHOST SETIDENT SETNAME CHGHOST CHGIDENT">
+<override noisy="yes" requirekey="no">
+
+#
+# Oper types.
+#
+<type name="NetAdmin"
+      classes="FullControl"
+      host="NetAdmin.InsomniaIRC.net"
+      modes="+s +AaCcQqkKLlOodxtf"
+      override="*">
+
+<type name="GlobalOp"
+      classes="OperChat BanControl HostCloak ServerLink IRCOpClass"
+      host="IRCOp.InsomniaIRC.net"
+      modes="+s +AaCcQqkKLlOodxtf">
+
+<type name="Helper"
+      classes="HostCloak"
+      host="Helper.InsomniaIRC.net">
+
+#
+# o:lines
+#
+<% opers.each do |oper| %>
+<oper name="<%= oper['name'] %>"
+      hash="<%= oper['hash'] %>"
+      password="<%= oper['password'] %>"
+      host="*@*"
+      type="<%= oper['type'] %>">
+<% end %>

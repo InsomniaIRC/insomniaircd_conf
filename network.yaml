@@ -1,0 +1,57 @@
+---
+servers:
+  hypocrisy.insomniairc.net:
+    admin:
+      name: Jesse Morgan
+      nick: jesterpm
+      email: jesterpm@insomniairc.net
+    links:
+      - hostname: euclid.insomniairc.net
+      - hostname: services.insomniairc.net
+        ipaddr: 127.0.0.1
+        port: 6663
+        bind: 127.0.0.1
+      - hostname: defender.insomniairc.net
+        ipaddr: 127.0.0.1
+        port: 6663
+        bind: 127.0.0.1
+
+  euclid.insomniairc.net:
+    admin:
+      name: Brian Sherson
+      nick: Weyoun
+      email: caretaker@insomniairc.net
+    links:
+      - hostname: hypocrisy.insomniairc.net
+
+secrets:
+  hypocrisy.insomniairc.net: i7i/MaQhej0p7Am5AQg8KrQrRf6j0x/4Drl8UKIJstI=
+  euclid.insomniairc.net: snVrI5K8KR6uGmVoYJbd+fTeaf6lXdxYZARrpMBGrWk=
+  services.insomniairc.net: qS92Pg/NGQ5NqvENwgQpVG+eRM8rOJ4ZSL+srYz01GY=
+  defender.insomniairc.net: st7W9jHf9Dj9wvhdClzR1k+DyaGy+3DTHU3lOgy0tG0=
+  diepass: FDGHkqeVnm6DGRpbpaZELu3jO1U4P8LgoZ8MWCWzolU=
+  restartpass: iDdLN5Z/59vVf/fOqh4/gRelT+KPI69sHxqf6cBO0Pw=
+  mibbit: eTU34SS7U8ZzxlJium8Yyhu5XAohGTc5FQ4+UlZIr1jilWFAvnagywYco6Riam9n
+  cloak0: EHzXTNP9FKzSV65joFCPz/izOa+vuYye659yKhyzs3U=
+  cloak1: bYQ28hQSEuW3yjgJxSJ7+WxVbDHZYUOCLYCLe1uGOJ8=
+  cloak2: cKAzZgSmEQxjJuFHJsDlvSjXBvgYaf1bvYQ+/FojMus=
+  cloak3: +tZIgTNNuvCDU9KJqseOPrnzzItQCWaz9BFDYJyRiZw=
+  cloak4: a/QZdafAupdQCR+uzL3gzYMQVsSG25bMejMCWbUQFyk=
+
+opers:
+  - name: Caretaker
+    hash: sha256
+    password: A+lvLGX3Y6hHfz88DJAYQ6LBgjG7qhAqLzZ1y2Wm4IszUQsdY2ibVzq0Rakrl1y09tcReQsFiMwp4LcZmJ3fyRXmk+KcKb4JvXiQhERl/S5RM6Qs43x/5zU9yDD1CaoT
+    type: NetAdmin
+  - name: jesterpm
+    hash: sha256
+    password: GU+VDGLFmTPbhaIeFf3ce9Fo6ZJBGH7MufaiaehP7pmI/JpnXaWl5amMZm7PzXpYgyI36iWCPQKA7Uyyrl98gUqq3VkbNtNCFlkuZ9Nndoj5T2F/V1qcPtpnwACFOplI
+    type: NetAdmin
+  - name: jonbo
+    hash: sha256
+    password: 48LStEhJUHHh+QzZj2SRwudFuhW/lMHDHFABSglHV83VeINnCBPJCJo/ygCKbb02XPZ3htqnIufL9J27AB9DxSlGOJmkJbrVYFsr09VaXJMrm+hR32OU8Q/w4FhGvUm1
+    type: NetAdmin
+  - name: Suspect
+    hash: sha256
+    password: axUhv+aUsYBW3SnYstFlzr9Lu1jC6Oi8yQCYWzKzHdxaYnMX/EEmzpffwdLKFxLLDQQmGvw23VoIMXEizGfJvVO1gqPzoVuJx9Rk9w66cOi07Roa10BI+BtAbihHa68E
+    type: NetAdmin

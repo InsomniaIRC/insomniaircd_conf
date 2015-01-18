@@ -1,0 +1,111 @@
+#
+# Network Wide Configuration ##
+#
+
+# U:Lines
+<uline server="services.insomniairc.net" silent="yes">
+<uline server="defender.insomniairc.net" silent="yes">
+
+# Misc. settings.
+<insane hostmasks="no" ipmasks="no" nickmasks="no" trigger="95.5">
+
+<channels users="20" opers="60">
+
+<whowas groupsize="10" maxgroups="100000" maxkeep="3d">
+
+<shun enabledcommands="PING PONG JOIN PART NICK QUIT" notifyuser="no">
+
+<ojoin prefix="!" notice="yes" op="yes">
+
+<blockcaps percent="80"
+           minlen="6"
+           capsmap="ABCDEFGHIJKLMNOPQRSTUVWXYZ! ">
+
+<security operspywhois="yes"
+          customversion=""
+          hidebans="no"
+          restrictbannedusers="yes"
+          hidewhois=""
+          hidesplits="no"
+          flatlinks="no"
+          hideulines="no"
+          userstats="Pu"
+          hidemodes="eI">
+
+<chanprotect noservices="yes"
+             qprefix="~"
+             aprefix="&"
+             deprotectself="yes"
+             deprotectothers="yes">
+
+<options prefixquit="Quit: "
+         pingwarning="30"
+         serverpingfreq="120"
+         allowhalfop="yes"
+         defaultmodes="nt"
+         hostintopic="no"
+         syntaxhints="yes"
+         cyclehosts="yes"
+         ircumsgprefix="no"
+         announcets="yes"
+         moronbanner="You have been banned. E-mail ircops@insomniairc.net with the error below for assistance."
+         exemptchanops="no">
+
+<performance netbuffersize="10240"
+             maxwho="128"
+             somaxconn="128"
+             softlimit="12800"
+             nouserdns="no"
+             quietbursts="yes">
+
+# Die/Restart Passwords
+<power diepass="<%= secret :diepass %>"
+       restartpass="<%= secret :restartpass %>"
+       pause="2">
+
+# Trigger a part/join in all channels when a hostname changes.
+<options cyclehosts="no">
+
+# We run NTP everywhere.
+<timesync enable="no" master="no">
+
+# Ban List Limits
+<banlist chan="*" limit="69">
+
+# Cloak Keys
+<cloak  key="<%= secret :cloak0 %>"
+       key1="<%= secret :cloak1 %>"
+       key2="<%= secret :cloak2 %>"
+       key3="<%= secret :cloak3 %>"
+       key4="<%= secret :cloak4 %>"
+       prefix="Insomniac-"
+       ipalways="false"
+       lowercase="false"
+       mode="half">
+
+# Blacklists
+<dnsbl name="Tor sectoor.de"
+       type="bitmask"
+       domain="tor.dnsbl.sectoor.de"
+       action="GLINE"
+       reason="Tor exit server detected. Please visit http://www.sectoor.de/tor.php?ip=%ip% for more information."
+       duration="1h"
+       bitmask="1">
+
+<dnsbl name="DroneBL"
+       type="bitmask"
+       domain="dnsbl.dronebl.org" 
+       action="GLINE" 
+       reason="You are listed in DroneBL. Please visit http://dronebl.org/lookup.do?ip=%ip% "
+       duration="1h"
+       bitmask="253">
+
+<dnsbl 
+       name="EFnet RBL" 
+       type="record"
+       domain="rbl.efnetrbl.org" 
+       action="ZLINE" 
+       reason="You are listed in the EFnet RBL and have been banned from InsomniaIRC. See http://efnetrbl.org for more information." 
+       duration="3d"
+       records="1-5">
+

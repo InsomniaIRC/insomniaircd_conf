@@ -1,0 +1,63 @@
+#
+# Configuration file for m_censor.so (1.0.0.0)
+# C.J.Edwards May 2004.
+#
+
+#
+# The tags for this module are formatted as follows:
+#
+# <badword	text="simple word" replace="text to replace with">
+#
+# You can specify <badword text="simple word" replace="">
+# to block lines containing the word
+
+<badword text="shit" replace="<censored>">
+<badword text="fuck" replace="<censored>">
+<badword text="pussy" replace="<censored>">
+<badword text="fuck" replace="<censored>">
+<badword text="whore" replace="<censored>">
+<badword text="slut" replace="<censored>">
+<badword text="shit" replace="<censored>">
+<badword text="asshole" replace="<censored>">
+<badword text="bitch" replace="<censored>">
+<badword text="cunt" replace="<censored>">
+<badword text="vagina" replace="<censored>">
+<badword text="penis" replace="<censored>">
+<badword text="jackass" replace="<censored>">
+<badword text="*fucker*" replace="<censored>">
+<badword text="faggot" replace="<censored>">
+<badword text="fag" replace="<censored>">
+<badword text="horny" replace="<censored>">
+<badword text="dickhead" replace="<censored>">
+<badword text="sonuvabitch" replace="<censored>">
+<badword text="*fuck*" replace="<censored>">
+<badword text="bastard" replace="<censored>">
+<badword text="tits" replace="<censored>">
+
+
+#
+# Reserved and forbidden nicks.
+#
+
+<badnick nick="ChanServ" reason="Reserved For Services">
+<badnick nick="NickServ" reason="Reserved For Services">
+<badnick nick="OperServ" reason="Reserved For Services">
+<badnick nick="MemoServ" reason="Reserved For Services">
+
+<badnick nick="*fuck*" reason="Inappropriate Nick">
+<badnick nick="*bitch*" reason="Inappropriate Nick">
+<badnick nick="*jackass*" reason="Inappropriate Nick">
+<badnick nick="*penis*" reason="Inappropriate Nick">
+<badnick nick="*shit*" reason="Inappropriate Nick">
+<badnick nick="*asshole*" reason="Inappropriate Nick">
+<badnick nick="*dickhead*" reason="Inappropriate Nick">
+<badnick nick="*vagina*" reason="Inappropriate Nick">
+<badnick nick="*cunt*" reason="Inappropriate Nick">
+<badnick nick="*whore*" reason="Inappropriate Nick">
+<badnick nick="*faggot*" reason="Inappropriate Nick">
+<badnick nick="*fagget*" reason="Inappropriate Nick">
+<badnick nick="*nigger*" reason="Inappropriate Nick">
+
+<badnick nick="KOR|*" reason="Virus drones">
+<badnick nick="USA|*" reason="Virus drones">
+

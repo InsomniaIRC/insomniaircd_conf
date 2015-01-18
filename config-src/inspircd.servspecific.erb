@@ -1,0 +1,70 @@
+#
+# Server Specific Config
+#
+# This template is used to generate the server specific bits of the config.
+#
+
+#
+# Server Description
+#
+<server name="<%= hostname %>"
+        description="The InsomniaIRC Network"
+        network="InsomniaIRC">
+
+#
+# Admin Information
+#
+<admin name="<%= server.admin['name'] %>"
+       nick="<%= server.admin['nick'] %>"
+       email="<%= server.admin['email'] %>">
+
+#
+# Binds
+#
+<bind address="*" port="6667" type="clients">
+<bind address="*" port="6697" type="clients" ssl="gnutls">
+<bind address="*" port="6663" type="servers">
+<bind address="*" port="6664" type="servers" ssl="gnutls">
+
+<gnutls cafile="ca.pem"
+        certcount="4"
+        certfile="conf/irc.crt"
+        crlfile="crl.pem"
+        dh_bits="1024"
+        keyfile="conf/irc.key">
+
+<dns server="8.8.8.8" timeout="5">
+
+#
+# Connection Settings
+#
+<connect allow="*"
+         flood="20"
+         globalmax="10"
+         localmax="10"
+         modes="+ixw"
+         pingfreq="120"
+         recvq="8192"
+         sendq="262144"
+         threshold="1"
+         timeout="60">
+
+#
+# Link Configuration
+#
+<% server.links.each do |link| %>
+<link name="<%= link['hostname'] %>"
+      ipaddr="<%= link['ipddr'].nil? ? Resolv.getaddress(link['hostname']) : link['ip'] %>"
+      port="<%= link['port'].nil? ? 6664 : link['port'] %>"
+      ssl="gnutls"
+      bind="<%= link['bind'].nil? ? Resolv.getaddress(hostname) : link['bind'] %>"
+      statshidden="no"
+      hidden="no"
+      sendpass="<%= secret link['hostname'] %>"
+      recvpass="<%= secret hostname %>">
+<% end %>
+
+<% if !hostname.nil? && File.file?("servers/#{hostname}") %>
+    <%= ERB.new(File.read("config-src/servers/#{hostname}")).result(binding) %>
+<% end %>
+

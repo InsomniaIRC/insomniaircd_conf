@@ -1,0 +1,17 @@
+#
+# Command aliases.
+# These are mostly to make services easier to use.
+#
+
+<alias text="NICKSERV" format=":IDENTIFY *" replace="PRIVMSG NickServ :IDENTIFY $3-" requires="NickServ" uline="yes">
+<alias text="NICKSERV" replace="PRIVMSG NickServ :$2-" requires="NickServ" uline="yes">
+<alias text="CHANSERV" replace="PRIVMSG ChanServ :$2-" requires="ChanServ" uline="yes">
+<alias text="HOSTSERV" replace="PRIVMSG HostServ :$2-" requires="HostServ" uline="yes">
+<alias text="BOTSERV" replace="PRIVMSG BotServ :$2-" requires="BotServ" uline="yes">
+<alias text="OPERSERV" replace="PRIVMSG OperServ :$2-" requires="OperServ" uline="yes" operonly="yes">
+<alias text="NS" replace="PRIVMSG NickServ :$2-" requires="NickServ" uline="yes">
+<alias text="CS" replace="PRIVMSG ChanServ :$2-" requires="ChanServ" uline="yes">
+<alias text="HS" replace="PRIVMSG HostServ :$2-" requires="HostServ" uline="yes">
+<alias text="BS" replace="PRIVMSG BotServ :$2-" requires="BotServ" uline="yes">
+<alias text="OS" replace="PRIVMSG OperServ :$2-" requires="OperServ" uline="yes" operonly="yes">
+
