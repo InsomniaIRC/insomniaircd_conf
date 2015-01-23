@@ -9,6 +9,10 @@ OUTPUT = "conf"
 
 directory OUTPUT
 
+task :default do
+  Rake::Task["compile"].invoke(ENV["HOSTNAME"])
+end
+
 task :clean do
     rm_rf OUTPUT
 end
